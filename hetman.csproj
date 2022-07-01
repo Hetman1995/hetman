@@ -167,10 +167,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="KomendaPolicjiDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="KomendaPolicjiDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>KomendaPolicjiDB.mdf</DependentUpon>
     </Content>
     <Content Include="KomendaPolicjiModel.Context.tt">

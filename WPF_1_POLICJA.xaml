@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WPF_1_POLICJA" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="gridPolicjanci"  HorizontalAlignment="Center" Height="197" Margin="0,227,0,0" VerticalAlignment="Top" Width="780" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="gridPolicjanci"  HorizontalAlignment="Left" Height="197" Margin="10,227,0,0" VerticalAlignment="Top" Width="414" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="gridPolicjanci_SelectionChanged"/>
         <Label Content="Imie" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="47"/>
         <TextBox x:Name="txtImie" HorizontalAlignment="Left" Margin="159,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
         <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="97"/>
@@ -16,6 +16,7 @@
         <TextBox x:Name="txtRok_Urodzenia" HorizontalAlignment="Left" Margin="159,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
         <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Click="btnDodaj_Click" Margin="253,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14"/>
         <Button x:Name="btnWczytaj" Content="Wczytaj Policjantów" HorizontalAlignment="Left" Height="23" Margin="10,194,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnWczytaj_Click"/>
+        <Button x:Name="btnZatwierdzZmiane" Content="Zaktualizuj Dane" HorizontalAlignment="Left" Height="23" Margin="159,194,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnZatwierdzZmiane_Click"/>
 
     </Grid>
 </Window>

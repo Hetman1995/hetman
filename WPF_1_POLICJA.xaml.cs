@@ -53,9 +53,9 @@ namespace hetman
 
             Policjanci PolicjaObject = new Policjanci()
             {
-                Imie = "Przemek",
-                Nazwisko = "Lato",
-                Rok_urodzenia = "1955"
+                Imie = txtImie.Text,
+                Nazwisko = txtNazwisko.Text,
+                Rok_urodzenia = txtRok_Urodzenia.Text
             };
             db.Policjancis.Add(PolicjaObject);
             db.SaveChanges();
@@ -73,6 +73,31 @@ namespace hetman
      
 
             this.gridPolicjanci.ItemsSource = db.Policjancis.ToList();
+
+        }
+
+        private void gridPolicjanci_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.WriteLine(this.gridPolicjanci.SelectedItems);
+
+
+        }
+
+        private void btnZatwierdzZmiane_Click(object sender, RoutedEventArgs e)
+        {
+            KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+
+            var r = from p in db.Policjancis
+                    where p.Id == 1
+                    select p;
+
+            foreach (var item in r)
+            {
+                MessageBox.Show(item.Imie);
+                item.Imie = "Andrzej Zaktualizowany!";
+
+            }
+            db.SaveChanges();
 
         }
     }
