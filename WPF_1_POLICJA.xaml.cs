@@ -33,6 +33,13 @@ namespace hetman
                 Console.WriteLine(item.Rok_urodzenia);
 
             }
+            this.gridPolicjanci.ItemsSource = policjas.ToList();
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
