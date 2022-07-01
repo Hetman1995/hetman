@@ -23,6 +23,7 @@
         <TextBox x:Name="txtNazwisko2" HorizontalAlignment="Left" Margin="590,280,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
         <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="441,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144"/>
         <TextBox x:Name="txtRok_Urodzenia2" HorizontalAlignment="Left" Margin="590,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
+        <Button x:Name="btnUsuwanie" Content="Usuń Policjanta" HorizontalAlignment="Left" Height="23" Margin="464,352,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial" Click="btnUsuwanie_Click"/>
 
     </Grid>
 </Window>

@@ -75,7 +75,7 @@ namespace hetman
             this.gridPolicjanci.ItemsSource = db.Policjancis.ToList();
 
         }
-
+        private int updatingPolicjantID = 0;
         private void gridPolicjanci_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.gridPolicjanci.SelectedIndex >= 0)
@@ -90,6 +90,7 @@ namespace hetman
                         this.txtNazwisko2.Text = p.Nazwisko;
                         this.txtRok_Urodzenia2.Text = p.Rok_urodzenia;
 
+                        this.updatingPolicjantID = p.Id;
 
                     }
 
@@ -102,17 +103,48 @@ namespace hetman
             KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
 
             var r = from p in db.Policjancis
-                    where p.Id == 1
+                    where p.Id == this.updatingPolicjantID
                     select p;
 
-            foreach (var item in r)
+            Policjanci obj = r.SingleOrDefault();
+                if (obj != null)
             {
-                MessageBox.Show(item.Imie);
-                item.Imie = "Andrzej Zaktualizowany!";
+                obj.Imie = this.txtImie2.Text;
+                obj.Nazwisko = this.txtNazwisko2.Text;
+                obj.Rok_urodzenia= this.txtRok_Urodzenia2.Text;
 
             }
             db.SaveChanges();
 
+        }
+
+        private void btnUsuwanie_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult msgBoxResult = MessageBox.Show("Jesteś pewny usunięcia Policjanta?",
+                "Usunąć Policjanta ? ",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning,
+                MessageBoxResult.No
+                );
+
+            if (msgBoxResult == MessageBoxResult.Yes)
+            {
+
+
+
+                KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+                var r = from p in db.Policjancis
+                        where p.Id == this.updatingPolicjantID
+                        select p;
+                Policjanci obj = r.SingleOrDefault();
+                if (obj != null)
+                {
+                    db.Policjancis.Remove(obj);
+                    db.SaveChanges();
+
+
+                }
+            }
         }
     }
 }
