@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KomendaPolicjiDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Pojazdy">
+          <Key>
+            <PropertyRef Name="Id_pojazdu" />
+          </Key>
+          <Property Name="Id_pojazdu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marka" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Model" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Rok_produkcji" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Policjanci">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imie" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nazwisko" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rok_urodzenia" Type="nchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="Sprzet">
+          <Key>
+            <PropertyRef Name="ID_sprzetu" />
+          </Key>
+          <Property Name="ID_sprzetu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="wartosc" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zgloszenia">
+          <Key>
+            <PropertyRef Name="Id_Zgloszenia" />
+          </Key>
+          <Property Name="Id_Zgloszenia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Imie_zglaszajacego" Type="nchar" MaxLength="20" />
+          <Property Name="Nazwisko_zglaszajacego" Type="nchar" MaxLength="20" />
+          <Property Name="Telefon_zglaszajacego" Type="int" Nullable="false" />
+          <Property Name="Opis_zdarzenia" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KomendaPolicjiDBModelStoreContainer">
+          <EntitySet Name="Pojazdy" EntityType="Self.Pojazdy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Policjanci" EntityType="Self.Policjanci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sprzet" EntityType="Self.Sprzet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zgloszenia" EntityType="Self.Zgloszenia" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KomendaPolicjiDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Pojazdy">
+          <Key>
+            <PropertyRef Name="Id_pojazdu" />
+          </Key>
+          <Property Name="Id_pojazdu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marka" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Rok_produkcji" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Policjanci">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Rok_urodzenia" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sprzet">
+          <Key>
+            <PropertyRef Name="ID_sprzetu" />
+          </Key>
+          <Property Name="ID_sprzetu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="wartosc" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zgloszenia">
+          <Key>
+            <PropertyRef Name="Id_Zgloszenia" />
+          </Key>
+          <Property Name="Id_Zgloszenia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Imie_zglaszajacego" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Nazwisko_zglaszajacego" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Telefon_zglaszajacego" Type="Int32" Nullable="false" />
+          <Property Name="Opis_zdarzenia" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KomendaPolicjiDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pojazdies" EntityType="Self.Pojazdy" />
+          <EntitySet Name="Policjancis" EntityType="Self.Policjanci" />
+          <EntitySet Name="Sprzets" EntityType="Self.Sprzet" />
+          <EntitySet Name="Zgloszenias" EntityType="Self.Zgloszenia" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KomendaPolicjiDBModelStoreContainer" CdmEntityContainer="KomendaPolicjiDBEntities">
+          <EntitySetMapping Name="Pojazdies">
+            <EntityTypeMapping TypeName="KomendaPolicjiDBModel.Pojazdy">
+              <MappingFragment StoreEntitySet="Pojazdy">
+                <ScalarProperty Name="Id_pojazdu" ColumnName="Id_pojazdu" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Rok_produkcji" ColumnName="Rok_produkcji" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Policjancis">
+            <EntityTypeMapping TypeName="KomendaPolicjiDBModel.Policjanci">
+              <MappingFragment StoreEntitySet="Policjanci">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Rok_urodzenia" ColumnName="Rok_urodzenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sprzets">
+            <EntityTypeMapping TypeName="KomendaPolicjiDBModel.Sprzet">
+              <MappingFragment StoreEntitySet="Sprzet">
+                <ScalarProperty Name="ID_sprzetu" ColumnName="ID_sprzetu" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="wartosc" ColumnName="wartosc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zgloszenias">
+            <EntityTypeMapping TypeName="KomendaPolicjiDBModel.Zgloszenia">
+              <MappingFragment StoreEntitySet="Zgloszenia">
+                <ScalarProperty Name="Id_Zgloszenia" ColumnName="Id_Zgloszenia" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Imie_zglaszajacego" ColumnName="Imie_zglaszajacego" />
+                <ScalarProperty Name="Nazwisko_zglaszajacego" ColumnName="Nazwisko_zglaszajacego" />
+                <ScalarProperty Name="Telefon_zglaszajacego" ColumnName="Telefon_zglaszajacego" />
+                <ScalarProperty Name="Opis_zdarzenia" ColumnName="Opis_zdarzenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
