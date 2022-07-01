@@ -98,6 +98,9 @@
     <Compile Include="Sprzet.cs">
       <DependentUpon>KomendaPolicjiModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="WPF_1_POLICJA.xaml.cs">
+      <DependentUpon>WPF_1_POLICJA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Zgloszenia.cs">
       <DependentUpon>KomendaPolicjiModel.tt</DependentUpon>
     </Compile>
@@ -123,6 +126,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WPF_1_POLICJA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
