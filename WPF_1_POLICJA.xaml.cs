@@ -195,6 +195,21 @@ namespace hetman
 
             this.gridSprzet.ItemsSource = db.Sprzets.ToList();
         }
+
+        private void btnUsuwanie1_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult msgBoxResult = MessageBox.Show("Jesteś pewny usunięcia zaznaczonego Sprzętu?",
+              "Usunąć Sprzęt ? ",
+              MessageBoxButton.YesNo,
+              MessageBoxImage.Warning,
+              MessageBoxResult.No
+              );
+
+          
+            }
+
+      
+    }
     }
 
-}
+

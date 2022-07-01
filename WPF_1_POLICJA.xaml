@@ -33,6 +33,7 @@
         <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Margin="601,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
         <Button x:Name="btnDodaj1" Content="Dodaj Sprzęt" HorizontalAlignment="Left" Click="btnDodaj1_Click" Margin="601,76,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14" Height="20" RenderTransformOrigin="0.086,-1.148"/>
         <Button x:Name="btnWczytaj1" Content="Wczytaj Sprzęt" HorizontalAlignment="Left" Height="23" Margin="601,104,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnWczytaj1_Click"/>
+        <Button x:Name="btnUsuwanie1" Content="Usuń Sprzęt" HorizontalAlignment="Left" Height="23" Margin="601,132,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial" Click="btnUsuwanie1_Click" RenderTransformOrigin="-0.478,0.393"/>
 
     </Grid>
 </Window>
