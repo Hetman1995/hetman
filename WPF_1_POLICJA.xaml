@@ -14,7 +14,7 @@
         <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Margin="159,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
         <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144"/>
         <TextBox x:Name="txtRok_Urodzenia" HorizontalAlignment="Left" Margin="159,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="253,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14"/>
+        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="253,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14" Click="btnDodaj_Click"/>
 
     </Grid>
 </Window>

@@ -41,5 +41,10 @@ namespace hetman
         {
 
         }
+
+        private void btnDodaj_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
