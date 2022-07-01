@@ -22,6 +22,17 @@ namespace hetman
         public WPF_1_POLICJA()
         {
             InitializeComponent();
+
+            KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+            var policjas = from p in db.Policjancis
+                           select p;
+            foreach (var item in policjas)
+            {
+                Console.WriteLine(item.Imie);
+                Console.WriteLine(item.Nazwisko);
+                Console.WriteLine(item.Rok_urodzenia);
+
+            }
         }
     }
 }
