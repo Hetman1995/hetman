@@ -78,9 +78,23 @@ namespace hetman
 
         private void gridPolicjanci_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.WriteLine(this.gridPolicjanci.SelectedItems);
+            if (this.gridPolicjanci.SelectedIndex >= 0)
+            {
+                if (this.gridPolicjanci.SelectedItems.Count >= 0)
+                {
+                    if (this.gridPolicjanci.SelectedItems[0].GetType() == typeof(Policjanci))
+
+                    {
+                        Policjanci p = (Policjanci)this.gridPolicjanci.SelectedItems[0];
+                        this.txtImie2.Text = p.Imie;
+                        this.txtNazwisko2.Text = p.Nazwisko;
+                        this.txtRok_Urodzenia2.Text = p.Rok_urodzenia;
 
 
+                    }
+
+                }
+            }
         }
 
         private void btnZatwierdzZmiane_Click(object sender, RoutedEventArgs e)
