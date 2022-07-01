@@ -6,24 +6,33 @@
         xmlns:local="clr-namespace:hetman"
         mc:Ignorable="d"
         Title="WPF_1_POLICJA" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="gridPolicjanci"  HorizontalAlignment="Left" Height="197" Margin="10,227,0,0" VerticalAlignment="Top" Width="414" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="gridPolicjanci_SelectionChanged"/>
-        <Label Content="Imie" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="47"/>
-        <TextBox x:Name="txtImie" HorizontalAlignment="Left" Margin="159,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="97"/>
-        <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Margin="159,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144"/>
-        <TextBox x:Name="txtRok_Urodzenia" HorizontalAlignment="Left" Margin="159,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Click="btnDodaj_Click" Margin="253,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14"/>
-        <Button x:Name="btnWczytaj" Content="Wczytaj Policjantów" HorizontalAlignment="Left" Height="23" Margin="10,194,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnWczytaj_Click"/>
-        <Button x:Name="btnZatwierdzZmiane" Content="Zaktualizuj Dane" HorizontalAlignment="Left" Height="23" Margin="641,352,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnZatwierdzZmiane_Click"/>
-        <Label Content="Imie" HorizontalAlignment="Left" Margin="441,243,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="47"/>
-        <TextBox x:Name="txtImie2" HorizontalAlignment="Left" Margin="590,247,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="441,276,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="97"/>
-        <TextBox x:Name="txtNazwisko2" HorizontalAlignment="Left" Margin="590,280,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="441,309,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144"/>
-        <TextBox x:Name="txtRok_Urodzenia2" HorizontalAlignment="Left" Margin="590,313,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Button x:Name="btnUsuwanie" Content="Usuń Policjanta" HorizontalAlignment="Left" Height="23" Margin="464,352,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial" Click="btnUsuwanie_Click"/>
+    <Grid Margin="0,0,-224,-108">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="507*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="gridPolicjanci"  HorizontalAlignment="Left" Height="197" Margin="6,266,0,0" VerticalAlignment="Top" Width="336" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="gridPolicjanci_SelectionChanged"/>
+        <Label Content="Imie" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="47" Height="33"/>
+        <TextBox x:Name="txtImie" HorizontalAlignment="Left" Margin="159,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="97" Height="33"/>
+        <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Margin="159,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
+        <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144" Height="33"/>
+        <TextBox x:Name="txtRok_Urodzenia" HorizontalAlignment="Left" Margin="159,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
+        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Click="btnDodaj_Click" Margin="159,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14" Height="20"/>
+        <Button x:Name="btnWczytaj" Content="Wczytaj Policjantów" HorizontalAlignment="Left" Height="23" Margin="6,238,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnWczytaj_Click"/>
+        <Button x:Name="btnZatwierdzZmiane" Content="Zaktualizuj Dane" HorizontalAlignment="Left" Height="23" Margin="488,391,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnZatwierdzZmiane_Click"/>
+        <Label Content="Imie" HorizontalAlignment="Left" Margin="342,266,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="47" Height="33"/>
+        <TextBox x:Name="txtImie2" HorizontalAlignment="Left" Margin="482,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="103" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="342,304,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="97" Height="33"/>
+        <TextBox x:Name="txtNazwisko2" HorizontalAlignment="Left" Margin="483,308,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
+        <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="342,344,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="141" Height="33"/>
+        <TextBox x:Name="txtRok_Urodzenia2" HorizontalAlignment="Left" Margin="483,348,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" RenderTransformOrigin="0.274,0.362" Height="25"/>
+        <Button x:Name="btnUsuwanie" Content="Usuń Policjanta" HorizontalAlignment="Left" Height="23" Margin="347,391,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial" Click="btnUsuwanie_Click" RenderTransformOrigin="-0.478,0.393"/>
+        <DataGrid x:Name="gridSprzet"  HorizontalAlignment="Left" Height="215" Margin="342,9,0,0" VerticalAlignment="Top" Width="225" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="gridSprzet_SelectionChanged"/>
+        <Label Content="Nazwa Sprzętu" HorizontalAlignment="Left" Margin="596,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144" Height="33"/>
+        <TextBox x:Name="txtNazwa" HorizontalAlignment="Left" Margin="601,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20" Height="25"/>
+        <Button x:Name="btnDodaj1" Content="Dodaj Sprzęt" HorizontalAlignment="Left" Click="btnDodaj1_Click" Margin="601,76,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14" Height="20" RenderTransformOrigin="0.086,-1.148"/>
+        <Button x:Name="btnWczytaj1" Content="Wczytaj Sprzęt" HorizontalAlignment="Left" Height="23" Margin="601,104,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnWczytaj1_Click"/>
 
     </Grid>
 </Window>

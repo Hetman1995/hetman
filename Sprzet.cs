@@ -17,5 +17,7 @@ namespace hetman
         public int ID_sprzetu { get; set; }
         public string Nazwa { get; set; }
         public double wartosc { get; set; }
+
+ 
     }
 }

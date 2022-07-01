@@ -37,7 +37,29 @@ namespace hetman
 
 
             }
+
             this.gridPolicjanci.ItemsSource = policjas.ToList();
+
+
+
+
+
+      /////////////////////////////////////
+
+            var Sprzets = from s in db.Sprzets
+                           select new
+                           {
+                               Nazwa = s.Nazwa,
+                               Wartosc = s.wartosc
+                           };
+            foreach (var item in Sprzets)
+            {
+                Console.WriteLine(item.Nazwa);
+                Console.WriteLine(item.Wartosc);
+
+
+            }
+            this.gridSprzet.ItemsSource = Sprzets.ToList();
 
         }
 
@@ -146,5 +168,33 @@ namespace hetman
                 }
             }
         }
+
+        private void gridSprzet_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnDodaj1_Click(object sender, RoutedEventArgs e)
+        {
+            KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+
+            Sprzet SprzetObject = new Sprzet()
+            {
+                Nazwa = txtNazwa.Text,
+
+            };
+
+            db.Sprzets.Add(SprzetObject);
+            db.SaveChanges();
+        }
+
+        private void btnWczytaj1_Click(object sender, RoutedEventArgs e)
+        {
+            KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+
+
+            this.gridSprzet.ItemsSource = db.Sprzets.ToList();
+        }
     }
+
 }
