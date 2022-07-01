@@ -25,12 +25,16 @@ namespace hetman
 
             KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
             var policjas = from p in db.Policjancis
-                           select p;
+                           select new
+                           {
+                               Imie = p.Imie,
+                               Nazwisko = p.Nazwisko
+                           };
             foreach (var item in policjas)
             {
                 Console.WriteLine(item.Imie);
                 Console.WriteLine(item.Nazwisko);
-                Console.WriteLine(item.Rok_urodzenia);
+
 
             }
             this.gridPolicjanci.ItemsSource = policjas.ToList();
@@ -44,6 +48,31 @@ namespace hetman
 
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
+
+            KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+
+            Policjanci PolicjaObject = new Policjanci()
+            {
+                Imie = "Przemek",
+                Nazwisko = "Lato",
+                Rok_urodzenia = "1955"
+            };
+            db.Policjancis.Add(PolicjaObject);
+            db.SaveChanges();
+
+
+            
+         
+
+        }
+
+        private void btnWczytaj_Click(object sender, RoutedEventArgs e)
+        {
+
+            KomendaPolicjiDBEntities db = new KomendaPolicjiDBEntities();
+     
+
+            this.gridPolicjanci.ItemsSource = db.Policjancis.ToList();
 
         }
     }

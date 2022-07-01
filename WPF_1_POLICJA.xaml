@@ -14,7 +14,8 @@
         <TextBox x:Name="txtNazwisko" HorizontalAlignment="Left" Margin="159,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
         <Label Content="Rok Urodzenia" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.439,-2.584" FontFamily="Arial" FontSize="20" Width="144"/>
         <TextBox x:Name="txtRok_Urodzenia" HorizontalAlignment="Left" Margin="159,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" TextChanged="TextBox_TextChanged" FontFamily="Arial" FontSize="20"/>
-        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="253,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14" Click="btnDodaj_Click"/>
+        <Button x:Name="btnDodaj" Content="Dodaj" HorizontalAlignment="Left" Click="btnDodaj_Click" Margin="253,110,0,0" VerticalAlignment="Top" Width="93" FontFamily="Arial" FontSize="14"/>
+        <Button x:Name="btnWczytaj" Content="Wczytaj Policjantów" HorizontalAlignment="Left" Height="23" Margin="10,194,0,0" VerticalAlignment="Top" Width="135" FontSize="14" FontFamily="Arial" Click="btnWczytaj_Click"/>
 
     </Grid>
 </Window>
